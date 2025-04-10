@@ -51,7 +51,7 @@ if playersWithX:
 
     for num in numbers:
         payload = {
-            "recipient": "+12147333570",
+            "recipient": num,
             "message": msg
         }
 
