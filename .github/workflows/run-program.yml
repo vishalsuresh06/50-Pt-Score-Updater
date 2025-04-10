@@ -62,6 +62,8 @@ jobs:
       # Step 7: Run the dependent script
       - name: Run the dependent script
         run: |
+          cd ..
+          ls
           python3 script.py
           echo "$(date): Dependent script completed" >> "$LOG_FILE"
 
