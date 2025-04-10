@@ -46,7 +46,7 @@ jobs:
           cd iMessage-API
           python3 server.py &
           FLASK_PID=$!
-          echo "$(date): Flask server started with PID $FLASK_PID" >> "$LOG_FILE"
+        # echo "$(date): Flask server started with PID $FLASK_PID" >> "$LOG_FILE"
         # continue-on-error: true  # This allows the job to continue even if this step fails
 
       # Step 6: Wait for Flask server to be responsive (with retries)
