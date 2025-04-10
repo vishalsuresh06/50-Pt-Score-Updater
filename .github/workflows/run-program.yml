@@ -4,8 +4,12 @@ on:
   schedule:
     - cron: '0 11 * * *'  # This will run the job at 11:00 AM UTC every day
   workflow_dispatch:  # This allows for manual trigger of the workflow
-- push
-- pull_request
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   run-flask-server-and-script:
