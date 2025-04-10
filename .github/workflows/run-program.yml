@@ -1,5 +1,12 @@
 name: Flask Server and Dependent Script Runner
 
+env:
+  PASSWORD: ${{ secrets.PASSWORD }}   
+  YOUR_NAME: ${{ secrets.YOUR_NAME }}
+  PORT_NUMBER: ${{ secrets.PORT_NUMBER }}
+  DB_FILEPATH: ${{ secrets.DB_FILEPATH }}
+  PHONE_NUMBERS: ${{ secrets.PHONE_NUMBERS }}
+
 on:
   schedule:
     - cron: '0 11 * * *'  # This will run the job at 11:00 AM UTC every day
