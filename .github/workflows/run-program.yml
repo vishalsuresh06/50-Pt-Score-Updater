@@ -6,10 +6,10 @@ on:
   workflow_dispatch:  # This allows for manual trigger of the workflow
   push:
     branches:
-      - main
+      - workflow
   pull_request:
     branches:
-      - main
+      - workflow
 
 jobs:
   run-flask-server-and-script:
