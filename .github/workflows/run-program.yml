@@ -53,19 +53,22 @@ jobs:
           cd iMessage-API
           python3 server.py &
           FLASK_PID=$!
+          curl --retry 10 --retry-delay 2 --retry-connrefused --silent --show-error http://127.0.0.1:5000
+          cd ..
+          python3 script.py
         # echo "$(date): Flask server started with PID $FLASK_PID" >> "$LOG_FILE"
         # continue-on-error: true  # This allows the job to continue even if this step fails
 
       # Step 6: Wait for Flask server to be responsive (with retries)
-      - name: Wait for Flask server to be ready
-        run: |
-          curl --retry 10 --retry-delay 2 --retry-connrefused --silent --show-error http://127.0.0.1:5000
+      # - name: Wait for Flask server to be ready
+      #   run: |
+      #     curl --retry 10 --retry-delay 2 --retry-connrefused --silent --show-error http://127.0.0.1:5000
 
       # Step 7: Run the dependent script
-      - name: Run the dependent script
-        run: |
-          ls
-          python3 script.py
+      # - name: Run the dependent script
+      #   run: |
+      #     ls
+      #     python3 script.py
 
       # Step 8: Stop the Flask server
       # - name: Stop Flask server
