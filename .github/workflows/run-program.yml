@@ -58,6 +58,7 @@ jobs:
       - name: Run the dependent script
         run: |
           cd ..
+          ls
           python3 script.py
 
       # Step 8: Stop the Flask server
