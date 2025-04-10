@@ -13,7 +13,7 @@ on:
 
 jobs:
   run-flask-server-and-script:
-    runs-on: ubuntu-latest  # You can use 'macos-latest' if you prefer macOS runner
+    runs-on: macos-latest  # You can use 'macos-latest' if you prefer macOS runner
 
     steps:
       # Step 1: Checkout repository code
