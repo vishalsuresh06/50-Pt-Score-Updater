@@ -1,6 +1,8 @@
 from nba_api.live.nba.endpoints import scoreboard
 from nba_api.live.nba.endpoints import boxscore
 import requests
+import os
+from dotenv import load_dotenv
 
 #Get game ids
 games = scoreboard.ScoreBoard().games.get_dict()
@@ -26,23 +28,28 @@ for id in gameIds:
     if has50:
         break
 
-if True:
+if has50:
     API_KEY = "password"
     SERVER_URL = "http://localhost:5000/send"
 
-    payload = {
-        "recipient": "+12147333570",
-        "message": "Someone dropped 50"
-    }
+    load_dotenv()
+    numbers = os.getenv("PHONE_NUMBERS", "")
+    numbers = numbers.split(",") if numbers else []
 
-    headers = {
-        "Api-Key": API_KEY,
-        "Content-Type": "application/json"
-    }
+    for num in numbers:
+        payload = {
+            "recipient": num,
+            "message": "Someone dropped 50"
+        }
 
-    try:
-        response = requests.post(SERVER_URL, headers=headers, json=payload)
-        print("Status Code:", response.status_code)
-        print("Response:", response.json())
-    except requests.exceptions.RequestException as e:
-        print("Failed to send message:", e)
+        headers = {
+            "Api-Key": API_KEY,
+            "Content-Type": "application/json"
+        }
+
+        try:
+            response = requests.post(SERVER_URL, headers=headers, json=payload)
+            print("Status Code:", response.status_code)
+            print("Response:", response.json())
+        except requests.exceptions.RequestException as e:
+            print("Failed to send message:", e)
