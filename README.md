@@ -65,7 +65,7 @@ I created this project because doordash has a promo code when an NBA player scor
    cd 50-Pt-Score-Updater
    ```
 
-2. ** Set Up Virtual Environment:
+2. **Set Up Virtual Environment**:
    - Create a virtual environment:
    ```bash
    python3 -m venv venv
@@ -79,5 +79,10 @@ I created this project because doordash has a promo code when an NBA player scor
      ```bash
      .\venv\Scripts\activate
      ```
+2. **Install Dependencies**:
+    - Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 
