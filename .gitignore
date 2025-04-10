@@ -1,1 +1,3 @@
 /venv
+/iMessage-API/.env
+.DS_Store
