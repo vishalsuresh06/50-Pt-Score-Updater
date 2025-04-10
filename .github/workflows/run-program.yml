@@ -61,9 +61,9 @@ jobs:
           python3 script.py
 
       # Step 8: Stop the Flask server
-      - name: Stop Flask server
-        run: |
-          kill $FLASK_PID
+      # - name: Stop Flask server
+      #   run: |
+      #     kill $FLASK_PID
 
       # Step 9: Upload the log file as an artifact (optional)
       # - name: Upload log file as artifact
