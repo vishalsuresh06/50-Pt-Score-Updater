@@ -43,7 +43,7 @@ jobs:
       # Step 5: Start Flask server in background
       - name: Start Flask server
         run: |
-          cd iMessage-API
+          cd 50-Pt-Score-Updater/iMessage-API
           nohup python3 server.py &
           FLASK_PID=$!
           echo "$(date): Flask server started with PID $FLASK_PID" >> "$LOG_FILE"
