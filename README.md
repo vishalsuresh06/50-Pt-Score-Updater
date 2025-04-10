@@ -66,16 +66,16 @@ I created this project because doordash has a promo code when an NBA player scor
    ```
 
 2. ** Set Up Virtual Environment:
-   * Create a virtual environment:
+   - Create a virtual environment:
    ```bash
    python3 -m venv venv
    ```
-   * Activate the virtual environment:
-     * For macOS/Linux:
+   - Activate the virtual environment:
+     - For macOS/Linux:
      ```bash
      python3 -m venv venv
      ```
-     * For Windows:
+     - For Windows:
      ```bash
      .\venv\Scripts\activate
      ```
