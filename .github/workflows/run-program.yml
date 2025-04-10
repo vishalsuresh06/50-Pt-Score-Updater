@@ -44,6 +44,7 @@ jobs:
       - name: Start Flask server
         run: |
           cd iMessage-API
+          ls -alh
           nohup python3 server.py &
           FLASK_PID=$!
           echo "$(date): Flask server started with PID $FLASK_PID" >> "$LOG_FILE"
