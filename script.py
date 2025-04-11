@@ -29,7 +29,7 @@ for game_id in gameIds:
             playersWithX.append((player['name'], player['statistics']['points']))
 
 # If there are players with 50+ points
-if playersWithX:
+if True:
     # Sort the players list by points in descending order
     playersWithX = sorted(playersWithX, key=lambda x: x[1], reverse=True)
 
